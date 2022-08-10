@@ -206,7 +206,7 @@ button {
     font-size: clamp(.8rem, 2.5vw, .9rem);
 }
 
-.padge-text-padding {
+.page-text-padding {
     padding: 1rem;
 }
 
