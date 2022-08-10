@@ -2,10 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
-    --primary-clr : #008e99;
-    --secondary-clr : #f2f2f2;
-    --secondary-clr-transparent : #f2f2f2e3;
-    --dark-clr : #333333;
+    --primary-clr : 0, 142, 153;
+    --secondary-clr : 242, 242, 242; 
+    --dark-clr : 51, 51, 51;
 }
 
 /* Box sizing rules */
@@ -84,9 +83,9 @@ button {
 }
 
 .btn {
-    background-color: var(--primary-clr);
+    background-color: rgb(var(--primary-clr));
     border: none;
-    color: var(--secondary-clr);
+    color: rgb(var(--secondary-clr));
     padding: .6rem 4rem;
     cursor: pointer;
     font-size: clamp(.8rem, 2.5vw, 1rem);
@@ -107,21 +106,17 @@ button {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.pointer {
-    cursor: pointer;
-}
-
 /* Container */
 
 .container {
     position: relative;
     padding: .7rem .5rem;
-    flex-basis: clamp(85%, 12vw + 1rem, 50%);
-    background: var(--secondary-clr-transparent);
+    flex-basis: 85%;
+    background: rgba(var(--secondary-clr), .89);
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    color: var(--dark-clr);
+    color: rgb(var(--dark-clr));
     gap: 1rem;
 }
 
@@ -138,7 +133,7 @@ button {
     left:-9px;
     width:18px;
     height:78vh;
-    background-color: var(--primary-clr);
+    background-color: rgb(var(--primary-clr));
     clip-path: polygon(0% 0%, 100% 3.5%, 100% 100%, 0% 100%);
 }
 
@@ -146,10 +141,10 @@ button {
     content: "";
     position: absolute;
     bottom:0;
-    left:-24px;/* -9px - 15px = -24px */
+    left:-24px;
     width:15px;
     height:55vh;
-    background-color: var(--primary-clr);
+    background-color:rgba(var(--primary-clr), .75);
     clip-path: polygon(0% 3.5%, 100% 0%, 100% 100%, 0% 100%);
 }
 
@@ -165,7 +160,7 @@ button {
         left: 9px;
         width:15px;
         height:65vh;
-        background-color: var(--primary-clr);
+        background-color:rgba(var(--primary-clr), .75);
         clip-path: polygon(0% 0%, 100% 3.5%, 100% 100%, 0% 100%);
     }
 
@@ -262,7 +257,7 @@ button {
 .memory-box-images {
     width:120px;
     height:120px;
-    border: 5px solid var(--primary-clr);
+    border: 5px solid rgb(var(--primary-clr));
     object-fit: cover;
     object-position: 25%;
 }
@@ -288,12 +283,12 @@ button {
 /* Quiz-game elements */
 
 .btn-quiz {
-    padding: .7rem 4rem;
+    padding: .6rem 4rem;
 }
 
 @media (min-width: 35rem){
     .btn-quiz{
-        padding: 1rem 8rem;
+        padding: .6rem 7rem;
     }
 }
 
@@ -320,22 +315,20 @@ button {
     }
 }
 
-
-.swipe-left {
+.swipe-arrow {
     width: 25px;
     height: 40px;
     padding:0;
-    background: var(--primary-clr);
+    background: rgb(var(--primary-clr));
+}
+
+.swipe-left {
     justify-self: end;
     margin-right: 2rem;
     clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 
 .swipe-right {
-    width: 25px;
-    height: 40px;
-    padding:0;
-    background: var(--primary-clr);
     margin-left: 2rem;
     clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
@@ -368,7 +361,7 @@ button {
 .input-fields {
     width: 100%;
     margin: 0;
-    border: 2px solid var(--primary-clr);
+    border: 2px solid rgb(var(--primary-clr));
     background: transparent;
     text-align: center;
     padding: .5rem 1rem;
@@ -395,7 +388,7 @@ button {
 }
 
 .label > input[type=checkbox] {
-    accent-color: var(--primary-clr);
+    accent-color: rgb(var(--primary-clr));
 }
 
 /* Result page */

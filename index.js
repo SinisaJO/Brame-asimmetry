@@ -32,8 +32,8 @@ const swipeGamePage = `
         <img src="/imgs/pic3.jpg">
     </div>
     <div class="swipe-btn-group">
-        <div class="swipe-left btn-swipe btn"></div>
-        <div class="swipe-right btn-swipe btn"></div>
+        <div class="swipe-left swipe-arrow btn-swipe btn"></div>
+        <div class="swipe-right swipe-arrow btn-swipe btn"></div>
         <button class="btn btn-swipe">Answer 1</button>
         <button class="btn btn-swipe">Answer 2</button>
     </div>
