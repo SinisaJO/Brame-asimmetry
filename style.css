@@ -90,6 +90,7 @@ button {
     cursor: pointer;
     font-size: clamp(.8rem, 2.5vw, 1rem);
     white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 @media (min-width: 50rem){
