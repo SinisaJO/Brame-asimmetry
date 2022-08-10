@@ -1,0 +1,412 @@
+/* Mobile(450/800) Desktop(1440/900) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-clr : #008e99;
+    --secondary-clr : #f2f2f2;
+    --secondary-clr-transparent : #f2f2f2e3;
+    --dark-clr : #333333;
+}
+
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Set core root defaults */
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-image: url('/imgs/background-desktop.jpg');
+  background-size: cover;
+  background-position: 38%;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (min-width: 55em) {
+    body {
+        background-position: 0%;
+    }
+}
+
+/* Make images easier to work with */
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button {
+  font: inherit;
+}
+
+
+/* Global */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.btn {
+    background-color: var(--primary-clr);
+    border: none;
+    color: var(--secondary-clr);
+    padding: .6rem 4rem;
+    cursor: pointer;
+    font-size: clamp(.8rem, 2.5vw, 1rem);
+    white-space: nowrap;
+}
+
+@media (min-width: 50rem){
+    .btn{
+        padding: .6rem 3.5rem;
+    }
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* Container */
+
+.container {
+    position: relative;
+    padding: .7rem .5rem;
+    flex-basis: clamp(85%, 12vw + 1rem, 50%);
+    background: var(--secondary-clr-transparent);
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: var(--dark-clr);
+    gap: 1rem;
+}
+
+@media (min-width: 50rem) {
+    .container {
+        flex-basis: 53%;
+    }
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    bottom:0;
+    left:-9px;
+    width:18px;
+    height:78vh;
+    background-color: var(--primary-clr);
+    clip-path: polygon(0% 0%, 100% 3.5%, 100% 100%, 0% 100%);
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    bottom:0;
+    left:-24px;/* -9px - 15px = -24px */
+    width:15px;
+    height:55vh;
+    background-color: var(--primary-clr);
+    clip-path: polygon(0% 3.5%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.container-line {
+    display: none;
+    position: absolute;
+}
+
+@media (min-width: 50rem){
+    .container-line {
+        display: block;
+        bottom:0;
+        left: 9px;
+        width:15px;
+        height:65vh;
+        background-color: var(--primary-clr);
+        clip-path: polygon(0% 0%, 100% 3.5%, 100% 100%, 0% 100%);
+    }
+
+    .container::after{
+        height:50vh;
+    }
+}
+
+.container-logo {
+    max-width: 30%;
+}
+
+@media (min-width: 50rem){
+    .container-logo{
+        max-width: 120px;
+    }
+}
+
+.container-footer-text {
+    font-size: clamp(.65rem, 2.5vw, .9rem);
+}
+
+/* Page elements */
+
+.page-box {
+    gap: 1.8rem;
+    align-items: center;
+    width: 98%;
+    margin-left: 9px;
+}
+
+@media (min-width: 50rem) {
+    .page-box {
+        width: 95%;
+        padding: 0rem 1rem;
+        gap: 1.5rem;
+        justify-content: space-between;
+    }
+}
+
+.page-text{
+    font-size: clamp(.8rem, 2.5vw, .9rem);
+}
+
+.padge-text-padding {
+    padding: 1rem;
+}
+
+.page-title{
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+    letter-spacing: -.5px;
+}
+
+.page-img {
+    background:var(--secondary-clr);
+    margin: 1rem;
+    max-width: 80%;
+    padding: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media (min-width: 70rem) {
+    .page-img {
+        max-width: 70%;
+    }
+}
+
+/* Memory-game elements */
+
+@media (min-width: 78.125rem){
+    .memory-box-timer{
+        top:150px;
+    }
+}
+
+.memory-box {
+    display:grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: .5rem;
+}
+
+@media (min-width: 25rem){
+    .memory-box{
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 78.125rem){
+    .memory-box{
+        grid-template-columns: repeat(4, 25%);
+    }
+}
+
+.memory-box-images {
+    width:120px;
+    height:120px;
+    border: 5px solid var(--primary-clr);
+    object-fit: cover;
+    object-position: 25%;
+}
+
+@media (min-width: 35rem){
+    .memory-box-images{
+        width:130px;
+        height:130px;
+    }
+}
+
+/* I've changed position of the images, to be the same as the ones in the screenshots */
+
+@media (max-width: 78.125rem){
+    .memory-box-images:nth-child(3){
+        content: url("/imgs/pic8.jpg");
+    }
+    .memory-box-images:nth-child(5){
+        content: url("/imgs/pic6.jpg");
+    }
+}
+
+/* Quiz-game elements */
+
+.btn-quiz {
+    padding: .7rem 4rem;
+}
+
+@media (min-width: 35rem){
+    .btn-quiz{
+        padding: 1rem 8rem;
+    }
+}
+
+/* Swipe-game elements */
+
+.swipe-btn-group {
+    display: grid;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    row-gap: 2rem;
+    column-gap: clamp(1rem, 2.5vw, 6rem);
+    grid-template-columns: repeat(2, 50%);
+}
+
+.swipe-btn-group > button {
+    padding: .5rem 2.5rem;
+}
+
+@media (min-width: 70rem) {
+    .swipe-btn-group{
+        width: 70%;
+        column-gap: 8rem;
+    }
+}
+
+
+.swipe-left {
+    width: 25px;
+    height: 40px;
+    padding:0;
+    background: var(--primary-clr);
+    justify-self: end;
+    margin-right: 2rem;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.swipe-right {
+    width: 25px;
+    height: 40px;
+    padding:0;
+    background: var(--primary-clr);
+    margin-left: 2rem;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Registration page */
+
+.registration-container {
+    gap: 0;
+}
+
+@media (min-width: 50rem) {
+    .registration-container {
+        gap: 1.8rem;
+    }
+}
+
+.input-box {
+    display: grid;
+    row-gap: .35rem;
+    align-items: center;
+    column-gap: .75rem;
+}
+
+@media (min-width: 75rem){
+    .input-box {
+        grid-template-columns: repeat(3, 33%);
+    }
+}
+
+.input-fields {
+    width: 100%;
+    margin: 0;
+    border: 2px solid var(--primary-clr);
+    background: transparent;
+    text-align: center;
+    padding: .5rem 1rem;
+    outline: none;
+    font-size: .95rem;
+}
+
+@media (min-width: 50rem){
+    .input-fields {
+        text-align: left;
+    }
+}
+
+.label {
+    margin-left: -.2rem;
+    display: block;
+    text-align: left;
+    font-size: .8rem;
+    align-self: flex-start;
+}
+
+.label:nth-of-type(1) {
+    margin-top: 1rem;
+}
+
+.label > input[type=checkbox] {
+    accent-color: var(--primary-clr);
+}
+
+/* Result page */
+
+.icons-box {
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+}
